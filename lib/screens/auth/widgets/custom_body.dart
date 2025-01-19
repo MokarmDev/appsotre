@@ -1,4 +1,3 @@
-
 import 'package:appstore/common/custom_background.dart';
 import 'package:appstore/common/custom_button.dart';
 import 'package:appstore/constants/app_colors.dart';
@@ -7,10 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBody extends StatelessWidget {
-
   final Widget child;
-  const CustomBody({super.key, required this.child});
-
+  final String title;
+  final String desc;
+  final String checkAccount;
+  const CustomBody(
+      {super.key,
+      required this.child,
+      required this.title,
+      required this.desc,
+      required this.checkAccount});
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +36,16 @@ class CustomBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text(
-                  "Sign Up",
-                  style: TextStyle(
+                Text(
+                  title,
+                  style: const TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const Text(
-                  "Enter your credentials to continue",
-                  style: TextStyle(
+                Text(
+                  desc,
+                  style: const TextStyle(
                     fontSize: 16,
                     color: AppColors.grey,
                     fontWeight: FontWeight.w500,
@@ -49,7 +54,6 @@ class CustomBody extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-
 
                 /// form
                 Padding(
@@ -61,7 +65,7 @@ class CustomBody extends StatelessWidget {
                   height: 30,
                 ),
                 CustomButton(
-                  text: "Sign Up",
+                  text: title,
                   onTap: () {},
                   backgroundColor: AppColors.primaryColor,
                 ),
@@ -70,17 +74,17 @@ class CustomBody extends StatelessWidget {
                 ),
                 Center(
                   child: RichText(
-                      text: const TextSpan(children: [
+                      text: TextSpan(children: [
                     TextSpan(
-                        text: "Already have an account ?",
-                        style: TextStyle(
+                        text: checkAccount,
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
                         )),
                     TextSpan(
-                        text: "Sign In",
-                        style: TextStyle(
+                        text: title,
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                           color: AppColors.primaryColor,

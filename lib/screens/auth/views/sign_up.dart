@@ -16,6 +16,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomBody(
+      title:  "Sign Up",
+      desc: "Enter your credentials to continue",
+      checkAccount: "Already have an account ?",
       child: Column(children: [
         const CustomTextField(
           label: 'Uersname',
